@@ -1,0 +1,91 @@
+Set file permissions
+Move to processing directory
+Verify SIP compliance
+Verify mets_structmap.xml compliance
+Check if SIP is from Maildir Transfer
+Rename SIP directory with SIP UUID
+Include default SIP processingMCP.xml
+Remove cache files
+Set file permissions
+Sanitize SIP name
+Load Dublin Core metadata from disk
+Identify manually normalized files
+Check for Service directory
+Check for Access directory
+Set remove preservation and access normalized files to renormalize link.
+Grant normalization options for no pre-existing DIP
+Move to workFlowDecisions-createDip directory
+Find options to normalize as
+Set resume link after tool selected.
+Move to select file ID tool
+Select pre-normalize file format identification command
+Identify file format
+Resume after normalization file identification tool selected.
+Normalize
+Move to processing directory
+Create DIP directory
+Create thumbnails directory
+Normalize for thumbnails
+Normalize for access
+Set file permissions
+Remove files without linking information (failed normalization artifacts etc.)
+Move to approve normalization directory
+Approve normalization
+Load post approve normalization link
+Set resume link after handling any manual normalized files
+Move to processing directory
+Set file permissions
+Check for manual normalized files
+Load finished with manual normalized link
+Set resume link after processing metadata directory
+Set file permissions
+Transcribe SIP contents
+Transcribe
+Copy transfer submission documentation
+Check for submission documentation
+Move submission documentation into objects directory
+Assign file UUIDs to submission documentation
+Assign checksums and file sizes to submissionDocumentation
+Sanitize file and directory names in submission documentation
+Scan for viruses in submission documentation
+Select file format identification command
+Identify file format
+Characterize and extract metadata on submission documentation
+Remove files without linking information (failed normalization artifacts etc.)
+Verify checksums generated on ingest
+Copy transfers metadata and logs
+Move metadata to objects directory
+Assign file UUIDs to metadata
+Assign checksums and file sizes to metadata 
+Sanitize file and directory names in metadata
+Scan for viruses in metadata
+Identify file format of metadata files
+Characterize and extract metadata on metadata files
+Remove empty manual normalization directories
+Move to metadata reminder
+Reminder: add metadata if desired
+Copy thumbnails to DIP directory
+Copy METS to DIP directory
+Copy OCR data to DIP directory
+Set file permissions
+Generate DIP
+Generate METS.xml document
+Load finished with metadata processing link
+Index AIP contents
+Move to compressionAIPDecisions directory
+Select compression algorithm
+Select compression level
+Compress AIP
+Create AIP Pointer File
+Set bag file permissions
+Remove bagged files
+Move to the store AIP approval directory
+Store AIP
+Retrieve AIP Storage Locations
+Store AIP location
+Move to processing directory
+Verify AIP
+Store the AIP
+Index AIP
+Clean up after storing AIP
+Remove the processing directory

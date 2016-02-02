@@ -1,0 +1,20 @@
+<table>
+		<tr>
+		<th>id</th>
+		<th>uuid</th>
+		<th>path</th>
+		<th>unit_type</th>
+		<th>status</th>
+		<th>microservice</th>
+		<th>current</th>
+	</tr>
+{% for item in items %}
+    <tr>
+        <td>{% print item[0] %}</td>
+        <td>{% print item[1] %}</td>
+<!--  -->        <td>{% print item[3] %}</td>
+        <td>{% print item[4] %}</td>
+        <td>{% print item[5] %}</td>
+    </td>
+{% endfor %}
+</table>
