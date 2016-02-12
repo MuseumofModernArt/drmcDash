@@ -223,111 +223,14 @@
                 <iframe src="http://archivematica.museum.moma.org/automation-audit/metrics" width="100%" height="500px"></iframe>
 
                 </div>
-
-                                <div class=":col-lg-6">
-                <canvas id="myChart" width="800" height="400"></canvas>
-
-                <script type="text/javascript">
-
-                    var data = {
-                        labels: {{labels}},
-                        datasets: [
-                            {
-                                label: "Pre-ingest",
-                                fillColor: "rgba(220,220,220,0.1)",
-                                strokeColor: "rgba(220,220,220,1)",
-                                pointColor: "rgba(220,220,220,1)",
-                                pointStrokeColor: "#fff",
-                                pointHighlightFill: "#fff",
-                                pointHighlightStroke: "rgba(220,220,220,1)",
-                                data: {{preIngest}}
-                            },
-                            {
-                                label: "Ready For Ingest",
-                                fillColor: "rgba(151,187,205,0.1)",
-                                strokeColor: "rgba(151,187,205,1)",
-                                pointColor: "rgba(151,187,205,1)",
-                                pointStrokeColor: "#fff",
-                                pointHighlightFill: "#fff",
-                                pointHighlightStroke: "rgba(151,187,205,1)",
-                                data: {{readyForIngest}}
-                            },
-                            {
-                                label: "Artwork level backlog",
-                                fillColor: "rgba(24, 134, 53, 0.48)",
-                                strokeColor: "rgba(151,187,205,1)",
-                                pointColor: "rgba(151,187,205,1)",
-                                pointStrokeColor: "#fff",
-                                pointHighlightFill: "#fff",
-                                pointHighlightStroke: "rgba(151,187,205,1)",
-                                data: {{artworkBacklog}}
-                            },
-                            // {
-                            //     label: "MPA backlog",
-                            //     fillColor: "rgba(151,187,205,0.2)",
-                            //     strokeColor: "rgba(151,187,205,1)",
-                            //     pointColor: "rgba(151,187,205,1)",
-                            //     pointStrokeColor: "#fff",
-                            //     pointHighlightFill: "#fff",
-                            //     pointHighlightStroke: "rgba(151,187,205,1)",
-                            //     data: {{mpaBacklog}}
-                            // },
-                            {
-                                label: "Isilon pre-ingest",
-                                fillColor: "rgba(151,187,205,0.1)",
-                                strokeColor: "rgba(151,187,205,1)",
-                                pointColor: "rgba(151,187,205,1)",
-                                pointStrokeColor: "#fff",
-                                pointHighlightFill: "#fff",
-                                pointHighlightStroke: "rgba(151,187,205,1)",
-                                data: {{preIngestIsilon}}
-                            },
-                            {
-                                label: "Isilon ready for ingest",
-                                fillColor: "rgba(151,187,205,0.2)",
-                                strokeColor: "rgba(151,187,205,1)",
-                                pointColor: "rgba(151,187,205,1)",
-                                pointStrokeColor: "#fff",
-                                pointHighlightFill: "#fff",
-                                pointHighlightStroke: "rgba(151,187,205,1)",
-                                data: {{readyForIngest2}}
-                            }
-                        ]
-                    };
-
-                    // Get the context of the canvas element we want to select
-                    var ctx = document.getElementById("myChart").getContext("2d");
-                    var myLineChart = new Chart(ctx).Line(data);
-
-                </script>
+                 <div class="col-lg-6">
+                <iframe src="http://archivematica.museum.moma.org/automation-audit/size" width="100%" height="500px"></iframe>
 
                 </div>
-                <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
 
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Storage stats
-                        </div>
-                        <div class="panel-body">
-                            this is where the current size of the various pre-processing dirs will go                     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    asdf
-                </div>
-                <div class="col-md-2">
-                    asdf
-                </div>
-                <div class="col-md-2">
-                    asdf
-                </div>
-            </div>
-      
+
         </div>
         <!-- /#page-wrapper -->
 
