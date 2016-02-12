@@ -45,10 +45,12 @@ def close_connection(exception):
 #     return render_template('print_items.html', items=cur.fetchall())
 
 @app.route('/dashboard')
-def pipeline(objectNum=None): # each pipeline will get its own function
+def pipeline(objectNum=None): 
     with open(microserviceFile, 'r') as f:
         microserviceList = [line.strip() for line in f]
     totalMicroNumbers = len(microserviceList)
+
+    # Pipeline #1
     one_DATABASE = 'static/transfers.db' # this line will be different for each pipeline
     db = getattr(g, '_database', None)
     db = g._database = sqlite3.connect(one_DATABASE)
@@ -81,8 +83,7 @@ def pipeline(objectNum=None): # each pipeline will get its own function
     one_microPercentage = int(float(one_currentMicroNumber) / totalMicroNumbers * 100)
 
 
-    # second pipeline
-
+    # Pipeline #2
     two_DATABASE = 'static/transfers-2.db' # this line will be different for each pipeline
     db = getattr(g, '_database', None)
     db = g._database = sqlite3.connect(two_DATABASE)
@@ -115,8 +116,7 @@ def pipeline(objectNum=None): # each pipeline will get its own function
     two_microPercentage = int(float(two_currentMicroNumber) / totalMicroNumbers * 100)
 
 
-    # third pipeline
-
+    # pipeline #3
     three_DATABASE = 'static/transfers-3.db' # this line will be different for each pipeline
     db = getattr(g, '_database', None)
     db = g._database = sqlite3.connect(three_DATABASE)
