@@ -81,7 +81,7 @@ def pipeline(objectNum=None):
     one_microserviceList = [] 
     one_currentMicroNumber = microserviceList.index(one_currentMicro)+1
     one_microPercentage = int(float(one_currentMicroNumber) / totalMicroNumbers * 100)
-
+ 
 
     # Pipeline #2
     two_DATABASE = 'static/transfers-2.db' # this line will be different for each pipeline
