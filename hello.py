@@ -10,9 +10,9 @@ app = Flask(__name__)
 first some static stuff and functions for sqlite stuff
 '''
 
+basepath = '/var/www/drmcDash/drmcDash/'
 
-
-microserviceFile = 'static/microservices-list'
+microserviceFile = basepath+'static/microservices-list'
 
 
 
@@ -44,14 +44,14 @@ def close_connection(exception):
 #     cur = get_db().execute('SELECT * FROM unit')
 #     return render_template('print_items.html', items=cur.fetchall())
 
-@app.route('/dashboard')
+@app.route('/')
 def pipeline(objectNum=None): 
     with open(microserviceFile, 'r') as f:
         microserviceList = [line.strip() for line in f]
     totalMicroNumbers = len(microserviceList)
 
     # Pipeline #1
-    one_DATABASE = 'static/transfers.db' # this line will be different for each pipeline
+    one_DATABASE = '/usr/lib/archivematica/automation-tools/transfers/transfers.db' # this line will be different for each pipeline
     db = getattr(g, '_database', None)
     db = g._database = sqlite3.connect(one_DATABASE)
     one_cur = db.execute('SELECT * from unit WHERE id = (SELECT max(id) FROM unit)')
@@ -84,7 +84,7 @@ def pipeline(objectNum=None):
 
 
     # Pipeline #2
-    two_DATABASE = 'static/transfers-2.db' # this line will be different for each pipeline
+    two_DATABASE = '/usr/lib/archivematica/automation-tools-2/transfers/transfers.db' # this line will be different for each pipeline
     db = getattr(g, '_database', None)
     db = g._database = sqlite3.connect(two_DATABASE)
     two_cur = db.execute('SELECT * from unit WHERE id = (SELECT max(id) FROM unit)')
@@ -111,13 +111,16 @@ def pipeline(objectNum=None):
     two_amStatus = two_archivematicaReq['status']
     two_amType = two_archivematicaReq['type']
     two_currentMicro = two_archivematicaReq['microservice']
-    two_microserviceList = [] 
-    two_currentMicroNumber = microserviceList.index(two_currentMicro)+1
-    two_microPercentage = int(float(two_currentMicroNumber) / totalMicroNumbers * 100)
+    two_microserviceList = []
+    two_currentMicroNumber = 0
+    two_microPercentage = 0
+    if two_currentMicro in microserviceList: 
+        two_currentMicroNumber = microserviceList.index(two_currentMicro)+1
+        two_microPercentage = int(float(two_currentMicroNumber) / totalMicroNumbers * 100)
 
 
     # pipeline #3
-    three_DATABASE = 'static/transfers-3.db' # this line will be different for each pipeline
+    three_DATABASE = '/usr/lib/archivematica/automation-tools-3/transfers/transfers.db' # this line will be different for each pipeline
     db = getattr(g, '_database', None)
     db = g._database = sqlite3.connect(three_DATABASE)
     three_cur = db.execute('SELECT * from unit WHERE id = (SELECT max(id) FROM unit)')
@@ -149,7 +152,7 @@ def pipeline(objectNum=None):
     three_microPercentage = int(float(three_currentMicroNumber) / totalMicroNumbers * 100)
 
 
-    counting_db = 'static/metrics.db' # this line will be different for each pipeline
+    counting_db = basepath+'static/metrics.db' # this line will be different for each pipeline
     db = getattr(g, '_database', None)
     db = g._database = sqlite3.connect(counting_db)
     counting_cur = db.execute('SELECT * from counting')
