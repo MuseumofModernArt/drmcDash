@@ -71,6 +71,7 @@ Set file permissions
 Generate DIP
 Generate METS.xml document
 Load finished with metadata processing link
+Prepare AIP
 Index AIP contents
 Move to compressionAIPDecisions directory
 Select compression algorithm
